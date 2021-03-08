@@ -7,8 +7,8 @@
 using namespace std;
 
 int main () {
-   Sudoku test;
+   Puzzle *test = new Sudoku();
 
-    cout << test;
-    return 0;
+   cout << *test;
+   return 0;
 }

@@ -19,7 +19,8 @@ bool SudokuSquare::setFixed(bool fix){
     return true;
 }
 
-bool SudokuSquare::setVal(int value){
+bool SudokuSquare::setVal(int value)
+{
     number = value;
     return true;
 }

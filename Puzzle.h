@@ -9,12 +9,21 @@ using namespace std;
 class Puzzle {
    
 public:
-    friend ostream& operator<<(ostream & the_stream, const Puzzle& rhs);
+    friend ostream& operator<<(ostream & the_stream, const Puzzle& rhs)
+    {
+       rhs.print(the_stream);
+       return the_stream;
+    }
 
-    friend ostream& operator>>(ostream & the_stream, const Puzzle& rhs);
+    friend istream& operator>>(istream & the_stream, const Puzzle& lhs)
+    {
+       lhs.readPuzzle(the_stream);
+       return the_stream;
+    }
 
 private:
-    
+    virtual ostream& print(ostream& the_stream) const = 0;
+    virtual istream& readPuzzle(istream& the_stream) const = 0;
 };
 
 #endif

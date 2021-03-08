@@ -1,4 +1,3 @@
-
 #include "SudokuSquare.h"
 #include "Puzzle.h"
 
@@ -7,10 +6,8 @@ using namespace std;
 class Sudoku: public Puzzle{
     public:
     Sudoku();
-
-    friend ostream& operator<<(ostream & the_stream, const Sudoku& rhs);
-
-    friend ostream& operator>>(ostream & the_stream, const Sudoku& rhs);
+    ostream& print(ostream& the_stream) const;
+    istream& readPuzzle(istream& the_stream) const;
 
     private:
     SudokuSquare sdk[9][9];
