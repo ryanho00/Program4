@@ -11,7 +11,7 @@ class SudokuSquare {
 public:
 
     SudokuSquare();
-    int getVal();
+    int getVal() const;
     bool getFixed();
     bool setVal(int value);
     bool setFixed(bool value);

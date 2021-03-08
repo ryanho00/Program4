@@ -14,7 +14,6 @@ public:
     Fitness();
     int howFit(Puzzle sdk);
     int duplicateRow(Puzzle sdk);
-    int duplicateRow(Puzzle sdk);
     int duplicateBlock(Puzzle sdk);
 
 private:

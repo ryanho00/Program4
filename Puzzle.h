@@ -3,17 +3,15 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "SudokuSquare.h"
 
 using namespace std;
 
 class Puzzle {
    
 public:
-    Puzzle();
-    virtual friend ostream& operator<<(ostream & the_stream, const Puzzle& rhs) = 0;
+    friend ostream& operator<<(ostream & the_stream, const Puzzle& rhs);
 
-    virtual friend ostream& operator>>(ostream & the_stream, const Puzzle& rhs) = 0;
+    friend ostream& operator>>(ostream & the_stream, const Puzzle& rhs);
 
 private:
     
