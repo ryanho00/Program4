@@ -11,7 +11,7 @@ class Puzzle {
 public:
     friend ostream& operator<<(ostream & the_stream, const Puzzle& rhs);
 
-    friend ostream& operator>>(ostream & the_stream, const Puzzle& rhs);
+    friend istream& operator>>(istream & the_stream, const string& rhs);
 
 private:
     

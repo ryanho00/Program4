@@ -10,7 +10,7 @@ class Sudoku: public Puzzle{
 
     friend ostream& operator<<(ostream & the_stream, const Sudoku& rhs);
 
-    friend ostream& operator>>(ostream & the_stream, const Sudoku& rhs);
+    friend istream& operator>>(istream & the_stream, const string& rhs);
 
     private:
     SudokuSquare sdk[9][9];

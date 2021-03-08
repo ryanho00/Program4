@@ -7,8 +7,11 @@
 using namespace std;
 
 int main () {
-   Sudoku test;
+    Sudoku test;
 
-    cout << test;
+    //cout << test;
+    string num = "123456789123456789123456789123456789123456789123456789123456789123456789123456789";
+    test >> num;
+    cout << test << endl;
     return 0;
 }
