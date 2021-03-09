@@ -9,7 +9,7 @@ bool SudokuSquare::getFixed(){
     return is_fixed;
 }
 
-int SudokuSquare::getVal() const
+int SudokuSquare::getVal()
 {
     return number;
 }
