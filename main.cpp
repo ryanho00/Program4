@@ -15,6 +15,6 @@ int main () {
    //123456789123456789123456789123456789123456789123456789123456789123456789123456789
    cin >> *test;
    cout << *test << endl;
-   //cout << testFactory->createPuzzle(*test); 
+   cout << *testFactory->createPuzzle();
    return 0;
 }

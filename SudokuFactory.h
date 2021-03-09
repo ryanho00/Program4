@@ -2,7 +2,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
-//#include "Sudoku.h"
+#include "Puzzle.h"
+#include "PuzzleFactory.h"
 #include <random>
 
 using namespace std;
@@ -11,7 +12,7 @@ class SudokuFactory: public PuzzleFactory{
 
 public:
     SudokuFactory();
-    Sudoku createPuzzle(Sudoku sdk_template);
+    Puzzle* createPuzzle();
 
 private:
     default_random_engine generator;

@@ -12,7 +12,7 @@ class PuzzleFactory {
 public:
 
     //virtual PuzzleFactory() = 0;
-    virtual Puzzle& createPuzzle(Puzzle &pz) = 0;
+    virtual Puzzle* createPuzzle() = 0;
 
 private:
     
