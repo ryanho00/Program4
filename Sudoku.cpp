@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Sudoku.h"
+#include <string>
 
 using namespace std;
 
@@ -12,7 +13,7 @@ Sudoku::Sudoku(){
     fitness_value = 0;
 }
 
-ostream& Sudoku::print(ostream& the_stream)const {
+ostream& Sudoku::print(ostream& the_stream) {
     for(int i = 0; i < 9; i++){
         if(i % 3 == 0){
             the_stream << "+-------+-------+-------+" << endl;
@@ -31,6 +32,18 @@ ostream& Sudoku::print(ostream& the_stream)const {
     return the_stream;
 }
 
-istream& Sudoku::readPuzzle(istream &the_stream)const {
+istream& Sudoku::readPuzzle(istream &the_stream) {
+   string tempString;
+   the_stream >> tempString;
 
+   int pos = 0;
+   for(int i = 0; i < 9; i++)
+   {
+      for(int j = 0; j < 9; j++)
+      {
+         sdk[i][j].setVal(tempString.at(pos) - '0');
+         pos++;
+      }
+   }
+   return the_stream;
 }
