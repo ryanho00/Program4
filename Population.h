@@ -11,11 +11,10 @@ class Population {
 
 public:
 
-    Population();
-    bool cull();
-    bool newGeneration();
-    int bestFitness();
-    Puzzle bestIndividual();
+    virtual bool cull() = 0;
+    virtual bool newGeneration() = 0;
+    virtual int bestFitness() = 0;
+    virtual Puzzle bestIndividual() = 0;
 
 private:
     vector<Puzzle> population;

@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "Puzzle.h"
 
 using namespace std;
 
@@ -10,8 +11,8 @@ class PuzzleFactory {
 
 public:
 
-    PuzzleFactory();
-    void createPuzzle();
+    //virtual PuzzleFactory() = 0;
+    virtual Puzzle& createPuzzle(Puzzle &pz) = 0;
 
 private:
     
