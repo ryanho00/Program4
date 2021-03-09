@@ -10,11 +10,18 @@ using namespace std;
 
 int main () {
    Puzzle *test = new Sudoku();
+   Puzzle *randomTest;
    PuzzleFactory *testFactory = new SudokuFactory();
-   // Cin works with this test string
+   //Cin works with this test string
    //123456789123456789123456789123456789123456789123456789123456789123456789123456789
+   cout << "Please give me the Sudoku you want to use" << endl;
    cin >> *test;
    cout << *test << endl;
-   cout << *testFactory->createPuzzle();
+   randomTest = testFactory->createPuzzle();
+   cout << *randomTest;
+
+   delete test;
+   delete testFactory;
+   delete randomTest;
    return 0;
 }
