@@ -4,13 +4,6 @@
 
 using namespace std;
 
-Sudoku::~Sudoku(){
-    for (int x = 0; x < 9; x++){
-        delete[] sdk[x];
-    }
-    delete[] sdk;
-}
-
 Sudoku::Sudoku(){
    cout << "Making a new Sudoku!" << endl;
    sdk = new SudokuSquare*[9];

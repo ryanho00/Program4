@@ -5,6 +5,10 @@ SudokuSquare::SudokuSquare(){
     is_fixed = false;
 }
 
+SudokuSquare::~SudokuSquare(){
+   
+}
+
 bool SudokuSquare::getFixed(){
     return is_fixed;
 }
