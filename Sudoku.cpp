@@ -4,6 +4,13 @@
 
 using namespace std;
 
+Sudoku::~Sudoku(){
+    for (int x = 0; x < 9; x++){
+        delete[] sdk[x];
+    }
+    delete[] sdk;
+}
+
 Sudoku::Sudoku(){
     for(int i = 0; i < 9; i++){
         for(int j = 0; j < 9; j++){
@@ -11,6 +18,14 @@ Sudoku::Sudoku(){
         }
     }
     fitness_value = 0;
+}
+
+void Sudoku::setArray(int val, int x, int y){
+    sdk[x][y].setVal(val);
+}
+
+SudokuSquare Sudoku::getArray(int x, int y){
+    return sdk[x][y];
 }
 
 ostream& Sudoku::print(ostream& the_stream) {

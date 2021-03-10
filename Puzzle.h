@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "SudokuSquare.h"
 
 using namespace std;
 
@@ -21,7 +22,11 @@ public:
        return the_stream;
     }
 
+    virtual void setArray(int val, int x, int y) = 0;
+    virtual SudokuSquare getArray(int x, int y) = 0;
+
 private:
+    
     virtual ostream& print(ostream& the_stream) = 0;
     virtual istream& readPuzzle(istream& the_stream) = 0;
 };
