@@ -1,5 +1,6 @@
 #include "SudokuSquare.h"
 #include "Puzzle.h"
+#include <vector>
 
 using namespace std;
 
@@ -13,6 +14,6 @@ class Sudoku: public Puzzle{
     SudokuSquare getArray(int x, int y);
 
     private:
-    SudokuSquare sdk[9][9];
+    SudokuSquare** sdk;
     int fitness_value;
 };

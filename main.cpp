@@ -17,6 +17,7 @@ int main () {
    Fitness *testFitness = new SudokuFitness();
    // Cin works with this test string
    //123456789123456789123456789123456789123456789123456789123456789123456789123456789
+   cout << "Please give me the Sudoku you want to use" << endl;
    cin >> *test;
    cout << *test << endl;
    //cout << *testFactory->createPuzzle();

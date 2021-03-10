@@ -12,12 +12,21 @@ Sudoku::~Sudoku(){
 }
 
 Sudoku::Sudoku(){
+   cout << "Making a new Sudoku!" << endl;
+   sdk = new SudokuSquare*[9];
     for(int i = 0; i < 9; i++){
-        for(int j = 0; j < 9; j++){
-            sdk[i][j].setVal(0);
-        }
+       sdk[i] = new SudokuSquare[9];
     }
     fitness_value = 0;
+    cout << "DONE!" << endl;
+}
+
+Sudoku::~Sudoku(){
+   for(int i = 0; i < 9; i++)
+   {
+      delete[] sdk[i];
+   }
+   delete[] sdk;
 }
 
 void Sudoku::setArray(int val, int x, int y){
@@ -57,6 +66,10 @@ istream& Sudoku::readPuzzle(istream &the_stream) {
       for(int j = 0; j < 9; j++)
       {
          sdk[i][j].setVal(tempString.at(pos) - '0');
+         if(sdk[i][j].getVal() != 0)
+         {
+            sdk[i][j].setFixed(true);
+         }
          pos++;
       }
    }
