@@ -14,12 +14,11 @@ public:
 
     //Reproduction();
 
-    virtual Sudoku* makeOffSpring(Sudoku sdk) = 0;
+    virtual Puzzle* makeOffSpring(Puzzle *pz) = 0;
 
     virtual SudokuSquare mutate(SudokuSquare square) = 0;
 
 private:
-    int mutation_rate;
 };
 
 #endif

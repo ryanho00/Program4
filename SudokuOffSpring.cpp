@@ -5,7 +5,8 @@ SudokuOffSpring::SudokuOffSpring(){
     mutation_rate = 0.05;
 }
 
-Sudoku* SudokuOffSpring::makeOffSpring(Sudoku sdk){
+Puzzle* SudokuOffSpring::makeOffSpring(Puzzle *sdk){
+   Sudoku *targetSDK = dynamic_cast<Sudoku*>(sdk);
     
     // create new sudoku
     Sudoku *new_sdk = new Sudoku();
@@ -13,7 +14,7 @@ Sudoku* SudokuOffSpring::makeOffSpring(Sudoku sdk){
     for(int i = 0; i < 9; i++){
         for(int j = 0; j < 9; j++){
             //get temp sdk_square from mutation
-            SudokuSquare temp = mutate(sdk.getArray(i,j));
+            SudokuSquare temp = mutate(targetSDK->getArray(i,j));
 
             // set temp sdk_square to the new sudoku object
             new_sdk->setArray(temp.getVal(),i,j);

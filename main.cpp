@@ -36,7 +36,7 @@ int main(int argc, char *argv[]) {
 
    // TODO #RYAN: HELP ME DEBUG LINE32
    // I can't cout << sudoku object (makeOffSpring returns sudoku)
-   //cout << *testReproduction->makeOffSpring(test) << endl;
+   cout << *testReproduction->makeOffSpring(test) << endl;
 
 
    delete test;
@@ -44,7 +44,8 @@ int main(int argc, char *argv[]) {
    delete testFitness;
    delete testReproduction;
    //827154396965327148341689752593468271472513689618972435786235914154796823239841567
-   //123050709020456709123050709123456789123456789123456789123456789123456789123456789 
+   //123050709020456709123050709123456789123456789123456789123456789123456789123456789
+   //000000000000000000000000000000000000000000000000000000000000000000000000000000000
 
    return 0;
 }
