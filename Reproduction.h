@@ -12,11 +12,11 @@ class Reproduction {
 
 public:
 
-    Reproduction();
+    //Reproduction();
 
-    Puzzle makeOffSpring(Puzzle sdk);
+    virtual Puzzle makeOffSpring(Puzzle sdk) = 0;
 
-    SudokuSquare mutate(SudokuSquare square);
+    virtual SudokuSquare mutate(SudokuSquare square) = 0;
 
 private:
     int mutation_rate;

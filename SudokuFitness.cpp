@@ -85,6 +85,7 @@ int SudokuFitness::duplicateRow(Sudoku sdk){
             }
         }
     }
+    temp.clear();
     return duplicate;
 }
 
