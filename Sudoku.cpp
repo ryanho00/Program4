@@ -46,6 +46,14 @@ SudokuSquare Sudoku::getArray(int x, int y){
     return sdk[x][y];
 }
 
+bool Sudoku::setFitness(int val){
+    fitness_value = val;
+}
+
+int Sudoku::getFitness(){
+    return fitness_value;
+}
+
 ostream& Sudoku::print(ostream& the_stream) {
     for(int i = 0; i < 9; i++){
         if(i % 3 == 0){
@@ -62,6 +70,8 @@ ostream& Sudoku::print(ostream& the_stream) {
       the_stream << endl;
     }
     the_stream << "+-------+-------+-------+" << endl;
+
+    the_stream << "Fitness value: " << fitness_value << endl;
     return the_stream;
 }
 

@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "Puzzle.h"
+#include "Fitness.h"
 #include "SudokuSquare.h"
 
 using namespace std;
@@ -14,7 +14,7 @@ public:
 
     //Reproduction();
 
-    virtual Puzzle makeOffSpring(Puzzle sdk) = 0;
+    virtual Sudoku makeOffSpring(Sudoku sdk) = 0;
 
     virtual SudokuSquare mutate(SudokuSquare square) = 0;
 

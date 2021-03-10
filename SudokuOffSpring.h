@@ -9,19 +9,22 @@
 #include <vector>
 #include "Puzzle.h"
 #include "SudokuSquare.h"
+#include "Reproduction.h"
+#include <random>
 
 using namespace std;
 
-class SudokuOffSpring: public Reproduction{
+class SudokuOffSpring: public Reproduction {
 public:
     SudokuOffSpring();
 
-    Puzzle makeOffSpring(Puzzle sdk);
+    Sudoku makeOffSpring(Sudoku sdk);
 
     SudokuSquare mutate(SudokuSquare square);
 
 private:
-    int mutation_rate;
+    double mutation_rate;
+    default_random_engine generator;
 };
 
 #endif //SUDOKUPUZZLE_SUDOKUOFFSPRING_H

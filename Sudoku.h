@@ -13,6 +13,8 @@ class Sudoku: public Puzzle{
     istream& readPuzzle(istream& the_stream);
     void setArray(int val, int x, int y);
     SudokuSquare getArray(int x, int y);
+    bool setFitness(int val);
+    int getFitness();
 
     private:
     SudokuSquare** sdk;

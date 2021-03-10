@@ -24,6 +24,8 @@ public:
 
     virtual void setArray(int val, int x, int y) = 0;
     virtual SudokuSquare getArray(int x, int y) = 0;
+    virtual bool setFitness(int val) = 0;
+    virtual int getFitness() = 0;
 
 private:
     
