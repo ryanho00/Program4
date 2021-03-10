@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <ostream>
+#include <vector>
 #include "Puzzle.h"
 //#include "Sudoku.h"
 #include "PuzzleFactory.h"
@@ -23,14 +24,23 @@ int main(int argc, char *argv[]) {
    PuzzleFactory *testFactory = new SudokuFactory();
    Fitness *testFitness = new SudokuFitness();
    SudokuOffSpring *testReproduction = new SudokuOffSpring();
+   vector<Puzzle*> createdSDK;
    // Cin works with this test string
    //123456789123456789123456789123456789123456789123456789123456789123456789123456789
    cout << "Please give me a line for the Sudoku!" << endl;
    cin >> *test;
    cout << *test << endl;
-   //cout << *testFactory->createPuzzle();
-   //cout << *testFactory->createPuzzle();
-   //cout << *testFactory->createPuzzle();
+
+   createdSDK.push_back(testFactory->createPuzzle());
+   createdSDK.push_back(testFactory->createPuzzle());
+   createdSDK.push_back(testFactory->createPuzzle());
+   for(int i = 0; i < createdSDK.size(); i++)
+   {
+      cout << *createdSDK.at(i) << endl;
+      delete createdSDK[i];
+   }
+   createdSDK.clear();
+
    //testFitness->howFit(*test);
    cout << testFitness->howFit(test) << endl;
 
