@@ -5,7 +5,7 @@ SudokuOffSpring::SudokuOffSpring(){
     mutation_rate = 0.05;
 }
 
-Sudoku SudokuOffSpring::makeOffSpring(Sudoku sdk){
+Sudoku* SudokuOffSpring::makeOffSpring(Sudoku sdk){
     
     // create new sudoku
     Sudoku *new_sdk = new Sudoku();
@@ -19,7 +19,9 @@ Sudoku SudokuOffSpring::makeOffSpring(Sudoku sdk){
             new_sdk->setArray(temp.getVal(),i,j);
         }
     }
-    return *new_sdk;
+    //Because you made a pointer to represent Sudoku, Sudoku object technically doesn't exist
+    //As a result, you need to return the pointer that contains Sudoku, not the mem location
+    return new_sdk;
 }
 
 SudokuSquare SudokuOffSpring::mutate(SudokuSquare square)

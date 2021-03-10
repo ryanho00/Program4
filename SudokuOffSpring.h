@@ -18,7 +18,7 @@ class SudokuOffSpring: public Reproduction {
 public:
     SudokuOffSpring();
 
-    Sudoku makeOffSpring(Sudoku sdk);
+    Sudoku* makeOffSpring(Sudoku sdk);
 
     SudokuSquare mutate(SudokuSquare square);
 

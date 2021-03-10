@@ -31,11 +31,11 @@ int main(int argc, char *argv[]) {
    //cout << *testFactory->createPuzzle();
    //cout << *testFactory->createPuzzle();
    //testFitness->howFit(*test);
-   cout << testFitness->howFit(*test);
+   cout << testFitness->howFit(*test) << endl;
 
    // TODO #RYAN: HELP ME DEBUG LINE32
    // I can't cout << sudoku object (makeOffSpring returns sudoku)
-   //cout << testReproduction->makeOffSpring(*test) << endl;
+   cout << *testReproduction->makeOffSpring(*test) << endl;
 
 
    delete test;

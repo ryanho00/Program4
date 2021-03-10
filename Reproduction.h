@@ -14,7 +14,7 @@ public:
 
     //Reproduction();
 
-    virtual Sudoku makeOffSpring(Sudoku sdk) = 0;
+    virtual Sudoku* makeOffSpring(Sudoku sdk) = 0;
 
     virtual SudokuSquare mutate(SudokuSquare square) = 0;
 
