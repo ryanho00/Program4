@@ -10,8 +10,6 @@ using namespace std;
 class Puzzle {
    
 public:
-    //virtual ~Puzzle() = 0;
-
     friend ostream& operator<<(ostream & the_stream, Puzzle& rhs)
     {
        rhs.print(the_stream);

@@ -11,20 +11,23 @@
 using namespace std;
 
 int main () {
-   //Puzzle *test = new Sudoku();
    Sudoku *test = new Sudoku();
    PuzzleFactory *testFactory = new SudokuFactory();
    Fitness *testFitness = new SudokuFitness();
    // Cin works with this test string
    //123456789123456789123456789123456789123456789123456789123456789123456789123456789
-   cout << "Please give me the Sudoku you want to use" << endl;
    cin >> *test;
    cout << *test << endl;
    //cout << *testFactory->createPuzzle();
    //cout << *testFactory->createPuzzle();
    //cout << *testFactory->createPuzzle();
    //testFitness->howFit(*test);
-   cout << testFitness->duplicateBlock(*test);
+   cout << testFitness->howFit(*test);
 
+   delete test;
+   delete testFactory;
+   delete testFitness;
+   //827154396965327148341689752593468271472513689618972435786235914154796823239841567
+   
    return 0;
 }

@@ -12,7 +12,6 @@ class SudokuFactory: public PuzzleFactory{
 
 public:
     SudokuFactory();
-    ~SudokuFactory();
     Puzzle* createPuzzle();
 
 private:

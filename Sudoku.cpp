@@ -14,12 +14,28 @@ Sudoku::Sudoku(){
     cout << "DONE!" << endl;
 }
 
+Sudoku::Sudoku(Sudoku &copy){
+    sdk = new SudokuSquare*[9];
+    for(int i = 0; i < 9; i++){
+       sdk[i] = new SudokuSquare[9];
+    }
+
+    for(int i = 0; i < 9; i++){
+        for(int j = 0; j < 9; j++){
+            sdk[i][j].setVal(copy.getArray(i,j).getVal());
+            sdk[i][j].setFixed(copy.getArray(i,j).getFixed());
+        }
+    }
+}
+
 Sudoku::~Sudoku(){
    for(int i = 0; i < 9; i++)
    {
       delete[] sdk[i];
+      sdk[i] = nullptr;
    }
    delete[] sdk;
+   sdk = nullptr;
 }
 
 void Sudoku::setArray(int val, int x, int y){

@@ -62,6 +62,9 @@ int SudokuFitness::countEachBlock(Sudoku sdk, int start_x, int start_y, int end_
             }
         }
     }
+
+    temp.clear();
+
     return duplicate;
 }
 

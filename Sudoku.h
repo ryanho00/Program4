@@ -7,6 +7,7 @@ using namespace std;
 class Sudoku: public Puzzle{
     public:
     Sudoku();
+    Sudoku(Sudoku &copy);
     ~Sudoku();
     ostream& print(ostream& the_stream);
     istream& readPuzzle(istream& the_stream);
