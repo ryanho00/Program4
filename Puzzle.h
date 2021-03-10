@@ -10,6 +10,9 @@ using namespace std;
 class Puzzle {
    
 public:
+    Puzzle(){};
+    ~Puzzle(){};
+
     friend ostream& operator<<(ostream & the_stream, Puzzle& rhs)
     {
        rhs.print(the_stream);
@@ -21,12 +24,6 @@ public:
        rhs.readPuzzle(the_stream);
        return the_stream;
     }
-
-    virtual void setArray(int val, int x, int y) = 0;
-    virtual SudokuSquare getArray(int x, int y) = 0;
-    virtual bool setFitness(int val) = 0;
-    virtual int getFitness() = 0;
-
 private:
     
     virtual ostream& print(ostream& the_stream) = 0;

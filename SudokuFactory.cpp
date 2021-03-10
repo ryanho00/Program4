@@ -7,7 +7,7 @@ SudokuFactory::SudokuFactory(){
 }
 
 Puzzle* SudokuFactory::createPuzzle(){
-   Puzzle *tempSudoku = new Sudoku();
+   Sudoku *tempSudoku = new Sudoku();
    
     uniform_int_distribution<int> uniform(1,9);
     for(int i = 0; i < 9; i++){
@@ -15,5 +15,7 @@ Puzzle* SudokuFactory::createPuzzle(){
             tempSudoku->setArray(uniform(generator), i, j);
         }
     }
-    return tempSudoku;
+
+    Puzzle* tempReturn = tempSudoku;
+    return tempReturn;
 }

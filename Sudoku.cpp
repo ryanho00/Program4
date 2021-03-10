@@ -5,13 +5,11 @@
 using namespace std;
 
 Sudoku::Sudoku(){
-   cout << "Making a new Sudoku!" << endl;
    sdk = new SudokuSquare*[9];
     for(int i = 0; i < 9; i++){
        sdk[i] = new SudokuSquare[9];
     }
     fitness_value = 0;
-    cout << "DONE!" << endl;
 }
 
 Sudoku::Sudoku(Sudoku &copy){
