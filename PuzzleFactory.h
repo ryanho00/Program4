@@ -10,8 +10,7 @@ using namespace std;
 class PuzzleFactory {
 
 public:
-
-    //virtual PuzzleFactory() = 0;
+    virtual ~PuzzleFactory(){};
     virtual Puzzle* createPuzzle() = 0;
 
 private:

@@ -1,17 +1,19 @@
 #include "SudokuPopulation.h"
+using namespace std;
 
-// SudokuPopulation::SudokuPopulation(){
+SudokuPopulation::SudokuPopulation(){
+   nextGenerationMaker = new SudokuOffSpring();
+}
 
-// }
-
-// SudokuPopulation::~SudokuPopulation(){
-
-// }
+SudokuPopulation::~SudokuPopulation(){
+   delete nextGenerationMaker;
+}
 
 
 SudokuPopulation::SudokuPopulation(int pop_size, int max_gen){
     population_size = pop_size;
     max_generation = max_gen;
+    nextGenerationMaker = new SudokuOffSpring();
 }
 
 int SudokuPopulation::getIndex(){
@@ -20,6 +22,7 @@ int SudokuPopulation::getIndex(){
 
 bool SudokuPopulation::setIndex(int index){
     best_index = index;
+    return true;
 }
 
 bool SudokuPopulation::cull(){
@@ -29,8 +32,8 @@ bool SudokuPopulation::cull(){
     // bubble sort from greatest fit to least fit (0-324) (Welcome to optimize this)
     for(int i = 0; i < population.size() - 1;i++){
         for(int j = 0; j < population.size() - i -1; j++){
-            if(population[j].getFitness() > population[j+1].getFitness()){
-                swap(&population[j],&population[j+1]);
+            if(population[j]->getFitness() > population[j+1]->getFitness()){
+                swap(population[j],population[j+1]);
             }
         }
     }
@@ -40,20 +43,21 @@ bool SudokuPopulation::cull(){
     for(int i = population.size() - 1; i > take_amount; i--){
         population.pop_back();
     }
+    return true;
 }
 
-void SudokuPopulation::swap(Sudoku* val1, Sudoku* val2){
-    Sudoku temp = *val1;
-    *val1 = *val2;
-    *val2 = temp;
-}
+//void SudokuPopulation::swap(Puzzle* val1, Puzzle* val2){
+//    Puzzle *temp = val1;
+//    *val1 = *val2;
+//    *val2 = *temp;
+//}
 
 int SudokuPopulation::bestFitness(){
     int best_index = 0;
-    int best_fitness = population[0].getFitness();
+    int best_fitness = population[0]->getFitness();
     for(int i = 1; i < population.size(); i++){
-        if(best_fitness > population[i].getFitness()){
-            best_fitness = population[i].getFitness();
+        if(best_fitness > population[i]->getFitness()){
+            best_fitness = population[i]->getFitness();
             best_index = i;
         }
     }
@@ -62,10 +66,19 @@ int SudokuPopulation::bestFitness(){
 }   
 
 bool SudokuPopulation::newGeneration(){
+   //Create the next generation
+   vector<Puzzle*> nextGen;
+   while(nextGen.size() < population_size){
+      int randomParentIndex = rand() % population_size;
+      nextGen.push_back(nextGenerationMaker->makeOffSpring(population[randomParentIndex]));
+   }
 
+   //Clear out the last generation and set it as the new
+   population.clear();
+   population = nextGen;
 }
 
-Sudoku SudokuPopulation::bestIndividual(){
+Puzzle* SudokuPopulation::bestIndividual(){
     int index = getIndex();
 
     return population[index];

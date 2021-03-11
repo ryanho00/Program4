@@ -6,6 +6,10 @@ SudokuFactory::SudokuFactory(){
     
 }
 
+SudokuFactory::~SudokuFactory(){
+
+}
+
 Puzzle* SudokuFactory::createPuzzle(){
    Sudoku *tempSudoku = new Sudoku();
    

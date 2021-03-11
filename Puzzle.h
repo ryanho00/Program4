@@ -24,6 +24,8 @@ public:
        rhs.readPuzzle(the_stream);
        return the_stream;
     }
+
+    virtual int getFitness() = 0;
 private:
     
     virtual ostream& print(ostream& the_stream) = 0;

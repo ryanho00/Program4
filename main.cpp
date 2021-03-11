@@ -11,7 +11,7 @@ int main(int argc, char *argv[]) {
 
    GeneticAlgorithm run(population_size, max_generation);
    run.process();
-   // //Population* testPopulation = new SudokuPopulation(population_size, max_generation);
+   // Population* testPopulation = new SudokuPopulation(population_size, max_generation);
    // Puzzle *test = new Sudoku();
    // PuzzleFactory *testFactory = new SudokuFactory();
    // Fitness *testFitness = new SudokuFitness();
