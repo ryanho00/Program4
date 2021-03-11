@@ -4,6 +4,7 @@
 #include <vector>
 #include "Population.h"
 #include "SudokuOffSpring.h"
+#include "SudokuFitness.h"
 
 using namespace std;
 
@@ -12,11 +13,12 @@ class SudokuPopulation: public Population{
 public:
     SudokuPopulation();
     ~SudokuPopulation();
-    SudokuPopulation(int pop_size, int max_gen);
+    SudokuPopulation(int pop_size, vector<Puzzle*> firstGen);
     bool cull();
     bool newGeneration();
     int bestFitness();
     Puzzle* bestIndividual();
+    void fitnessCheck();
 
 private:
     vector<Puzzle*> population;
@@ -27,4 +29,5 @@ private:
     int max_generation;
     //void swap(Puzzle* val1, Puzzle* val2);
     Reproduction *nextGenerationMaker;
+    Fitness *fitnessChecker;
 };

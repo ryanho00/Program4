@@ -111,9 +111,9 @@ int SudokuFitness::duplicateColumn(Sudoku* sdk){
 
 int SudokuFitness::howFit(Puzzle* sdk){
    Sudoku *targetSDK = dynamic_cast<Sudoku*>(sdk);
-    cout << "Column: " << duplicateColumn(targetSDK) << endl;
-    cout << "Row: " << duplicateRow(targetSDK) << endl;
-    cout << "Blocks: " << duplicateBlock(targetSDK) << endl;
+    //cout << "Column: " << duplicateColumn(targetSDK) << endl;
+    //cout << "Row: " << duplicateRow(targetSDK) << endl;
+    //cout << "Blocks: " << duplicateBlock(targetSDK) << endl;
     int fitness = duplicateBlock(targetSDK) + duplicateColumn(targetSDK) + duplicateRow(targetSDK);
     return fitness;
 }

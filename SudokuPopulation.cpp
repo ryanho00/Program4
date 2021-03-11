@@ -3,6 +3,7 @@ using namespace std;
 
 SudokuPopulation::SudokuPopulation(){
    nextGenerationMaker = new SudokuOffSpring();
+   fitnessChecker = new SudokuFitness();
 }
 
 SudokuPopulation::~SudokuPopulation(){
@@ -10,10 +11,13 @@ SudokuPopulation::~SudokuPopulation(){
 }
 
 
-SudokuPopulation::SudokuPopulation(int pop_size, int max_gen){
+SudokuPopulation::SudokuPopulation(int pop_size, vector<Puzzle*> firstGen){
     population_size = pop_size;
-    max_generation = max_gen;
     nextGenerationMaker = new SudokuOffSpring();
+    fitnessChecker = new SudokuFitness();
+    population = firstGen;
+
+    fitnessCheck();
 }
 
 int SudokuPopulation::getIndex(){
@@ -76,10 +80,19 @@ bool SudokuPopulation::newGeneration(){
    //Clear out the last generation and set it as the new
    population.clear();
    population = nextGen;
+   fitnessCheck();
 }
 
 Puzzle* SudokuPopulation::bestIndividual(){
     int index = getIndex();
 
     return population[index];
+}
+
+void SudokuPopulation::fitnessCheck(){
+   for(int i = 0; i < population.size(); i++){
+      int fitnessToAssign;
+      fitnessToAssign = fitnessChecker->howFit(population[i]);
+      population[i]->setFitness(fitnessToAssign);
+   }
 }

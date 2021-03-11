@@ -13,7 +13,7 @@ class SudokuFactory: public PuzzleFactory{
 public:
     SudokuFactory();
     ~SudokuFactory();
-    Puzzle* createPuzzle();
+    Puzzle* createPuzzle(Puzzle* base);
 
 private:
     default_random_engine generator;

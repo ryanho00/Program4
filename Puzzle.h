@@ -26,6 +26,7 @@ public:
     }
 
     virtual int getFitness() = 0;
+    virtual bool setFitness(int val) =0;
 private:
     
     virtual ostream& print(ostream& the_stream) = 0;

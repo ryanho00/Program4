@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "Puzzle.h"
-#include "PuzzleFactory.h"
+#include "SudokuFactory.h"
+#include "SudokuPopulation.h"
 #include <random>
 
 using namespace std;
@@ -14,4 +14,7 @@ public:
     void process();
 private:
     int population_size, max_generation;
+    Population *populationManager;
+    Puzzle *toSolve;
+    PuzzleFactory *factory;
 };

@@ -11,7 +11,7 @@ class PuzzleFactory {
 
 public:
     virtual ~PuzzleFactory(){};
-    virtual Puzzle* createPuzzle() = 0;
+    virtual Puzzle* createPuzzle(Puzzle* base) = 0;
 
 private:
     
