@@ -17,7 +17,8 @@ public:
     virtual Sudoku bestIndividual() = 0;
 
 private:
-    vector<Puzzle> population;
+    vector<Sudoku> population;
+    int best_index;
     int population_size;
     int max_generation;
 };
