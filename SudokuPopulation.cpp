@@ -8,6 +8,11 @@ SudokuPopulation::SudokuPopulation(){
 
 SudokuPopulation::~SudokuPopulation(){
    delete nextGenerationMaker;
+   for(int i = 0; i < population.size(); i++)
+   {
+      delete population[i];
+   }
+   population.clear();
 }
 
 
@@ -45,16 +50,10 @@ bool SudokuPopulation::cull(){
     // now having the sorted vector of sudokus, we just need to get take_amount of sudokus
     // pop the rest
     for(int i = population.size() - 1; i > take_amount; i--){
-        population.pop_back();
+       population.pop_back();
     }
     return true;
 }
-
-//void SudokuPopulation::swap(Puzzle* val1, Puzzle* val2){
-//    Puzzle *temp = val1;
-//    *val1 = *val2;
-//    *val2 = *temp;
-//}
 
 int SudokuPopulation::bestFitness(){
     int best_index = 0;
@@ -72,12 +71,23 @@ int SudokuPopulation::bestFitness(){
 bool SudokuPopulation::newGeneration(){
    //Create the next generation
    vector<Puzzle*> nextGen;
-   while(nextGen.size() < population_size){
+   while(nextGen.size() < population_size - population.size()){
       int randomParentIndex = rand() % population_size;
       nextGen.push_back(nextGenerationMaker->makeOffSpring(population[randomParentIndex]));
    }
+   for(int i = 0; i < population.size(); i++)
+   {
+      nextGen.push_back(population[i]);
+   }
 
    //Clear out the last generation and set it as the new
+   /*
+   for(int i = 0; i < population.size(); i++)
+   {
+      delete population[i];
+   }
+    */
+
    population.clear();
    population = nextGen;
    fitnessCheck();

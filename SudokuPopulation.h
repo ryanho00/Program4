@@ -27,7 +27,6 @@ private:
     int getIndex();
     int population_size;
     int max_generation;
-    //void swap(Puzzle* val1, Puzzle* val2);
     Reproduction *nextGenerationMaker;
     Fitness *fitnessChecker;
 };

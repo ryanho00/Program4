@@ -2,7 +2,7 @@
 #include <random>
 
 SudokuOffSpring::SudokuOffSpring(){
-    mutation_rate = 0.05;
+    mutation_rate = 0.03;
 }
 
 Puzzle* SudokuOffSpring::makeOffSpring(Puzzle *sdk){
@@ -17,7 +17,7 @@ Puzzle* SudokuOffSpring::makeOffSpring(Puzzle *sdk){
             SudokuSquare temp = mutate(targetSDK->getArray(i,j));
 
             // set temp sdk_square to the new sudoku object
-            new_sdk->setArray(temp.getVal(),i,j);
+            new_sdk->setArray(temp.getVal(),temp.getFixed(),i,j);
         }
     }
     //Because you made a pointer to represent Sudoku, Sudoku object technically doesn't exist

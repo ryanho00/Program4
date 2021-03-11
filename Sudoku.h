@@ -11,7 +11,7 @@ class Sudoku: public Puzzle{
     ~Sudoku();
     ostream& print(ostream& the_stream);
     istream& readPuzzle(istream& the_stream);
-    void setArray(int val, int x, int y);
+    void setArray(int val,bool fixed, int x, int y);
     SudokuSquare getArray(int x, int y);
     bool setFitness(int val);
     int getFitness();

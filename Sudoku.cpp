@@ -21,7 +21,10 @@ Sudoku::Sudoku(Sudoku &copy){
     for(int i = 0; i < 9; i++){
         for(int j = 0; j < 9; j++){
             sdk[i][j].setVal(copy.getArray(i,j).getVal());
-            sdk[i][j].setFixed(copy.getArray(i,j).getFixed());
+            if(sdk[i][j].getFixed())
+            {
+               sdk[i][j].setFixed(true);
+            }
         }
     }
 }
@@ -36,8 +39,9 @@ Sudoku::~Sudoku(){
    sdk = nullptr;
 }
 
-void Sudoku::setArray(int val, int x, int y){
+void Sudoku::setArray(int val, bool fixed, int x, int y){
     sdk[x][y].setVal(val);
+    sdk[x][y].setFixed(fixed);
 }
 
 SudokuSquare Sudoku::getArray(int x, int y){

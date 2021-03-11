@@ -34,4 +34,8 @@ void GeneticAlgorithm::process(){
        populationManager->newGeneration();
        cout << "next gen created!" << endl;
     }
+
+    delete factory;
+    delete toSolve;
+    delete populationManager;
 }
