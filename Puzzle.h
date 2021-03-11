@@ -11,7 +11,7 @@ class Puzzle {
    
 public:
     Puzzle(){};
-    ~Puzzle(){};
+    virtual ~Puzzle(){};
 
     friend ostream& operator<<(ostream & the_stream, Puzzle& rhs)
     {
