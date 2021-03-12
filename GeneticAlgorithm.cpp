@@ -25,19 +25,26 @@ void GeneticAlgorithm::process(){
 
     populationManager = new SudokuPopulation(population_size, firstGen);
 
+    //Cull and make new generation for no more than max_generation allowed
     for(int i = 0; i < max_generation; i++)
     {
        cout << "Generation: " << i + 1 << endl;
        cout << "Best puzzle for this generation:" << endl;
        cout << *populationManager->bestIndividual();
        populationManager->bestFitness();
-       if(i != max_generation)
-       {
+
+       //If we solved it before hitting the max generation limit
+       //Just stop, there's no point
+       if(populationManager->bestFitness() == 0){
+          break;
+       }
+       if(i != max_generation) {
           populationManager->cull();
           populationManager->newGeneration();
        }
     }
 
+    firstGen.clear();
     delete factory;
     delete toSolve;
     delete populationManager;
