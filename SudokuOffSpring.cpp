@@ -2,7 +2,7 @@
 #include <random>
 
 SudokuOffSpring::SudokuOffSpring(){
-    mutation_rate = 0.03;
+    mutation_rate = 0.02;
 }
 
 Puzzle* SudokuOffSpring::makeOffSpring(Puzzle *sdk){

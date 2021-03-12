@@ -10,6 +10,7 @@ SudokuPopulation::SudokuPopulation(){
 //Default Destructor
 SudokuPopulation::~SudokuPopulation(){
    delete nextGenerationMaker;
+   delete fitnessChecker;
    for(int i = 0; i < population.size(); i++)
    {
       delete population[i];
@@ -45,6 +46,7 @@ bool SudokuPopulation::cull(){
     int take_amount = population.size() * 0.1;
     // pop the rest
     for(int i = population.size() - 1; i > take_amount; i--){
+       delete population[i];
        population.pop_back();
     }
     return true;
