@@ -41,5 +41,24 @@ int main(int argc, char *argv[]) {
    //000000000000000000000000000000000000000000000000000000000000000000000000000000000
    //120650000938010004400089010004500089000000000290001300070140008500060427000028065
 
+/*
+   PuzzleFactory *aFactory = new SudokuFactory();
+   Fitness *checkFitness = new SudokuFitness();
+   Puzzle *sdk1 = new Sudoku();
+   cin >> *sdk1;
+   Puzzle *sdk2 = aFactory->createPuzzle(sdk1);
+
+   sdk1->setFitness(checkFitness->howFit(sdk1));
+   sdk2->setFitness(checkFitness->howFit(sdk2));
+
+   cout << *sdk1 << endl;
+   cout << *sdk2 << endl;
+
+   cout << "fitness of sdk1: " << sdk1->getFitness() << endl;
+   cout << "fitness of sdk2: " << sdk2->getFitness() << endl;
+   cout << "SDK1 > SDK2 : " << (sdk1 > sdk2) << endl;
+   cout << "SDK1 < SDK2 : " << (sdk1 < sdk2) << endl;
+*/
+
    return 0;
 }

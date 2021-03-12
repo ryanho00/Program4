@@ -50,9 +50,10 @@ SudokuSquare Sudoku::getArray(int x, int y){
 
 bool Sudoku::setFitness(int val){
     fitness_value = val;
+    return true;
 }
 
-int Sudoku::getFitness(){
+int Sudoku::getFitness() const{
     return fitness_value;
 }
 
@@ -95,4 +96,21 @@ istream& Sudoku::readPuzzle(istream &the_stream) {
       }
    }
    return the_stream;
+}
+
+/*
+bool operator<(const Sudoku &lhs, const Sudoku &rhs){
+   return lhs.fitness_value < rhs.fitness_value;
+}
+
+bool operator>(const Sudoku &lhs, const Sudoku &rhs){
+   return lhs.fitness_value > rhs.fitness_value;
+} */
+
+bool Sudoku::lessThan(const Puzzle *rhs) const{
+   return fitness_value < rhs->getFitness();
+}
+
+bool Sudoku::greaterThan(const Puzzle *rhs) const{
+   return fitness_value > rhs->getFitness();
 }

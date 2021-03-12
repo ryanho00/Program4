@@ -25,8 +25,21 @@ public:
        return the_stream;
     }
 
-    virtual int getFitness() = 0;
+    bool operator<(const Puzzle* rhs)
+    {
+       return lessThan(rhs);
+    }
+
+    bool operator>(const Puzzle* rhs)
+    {
+       return greaterThan(rhs);
+    }
+
+    virtual int getFitness() const = 0;
     virtual bool setFitness(int val) =0;
+
+    virtual bool lessThan(const Puzzle* rhs)const=0;
+    virtual bool greaterThan(const Puzzle* rhs)const=0;
 private:
     
     virtual ostream& print(ostream& the_stream) = 0;

@@ -14,8 +14,15 @@ class Sudoku: public Puzzle{
     void setArray(int val,bool fixed, int x, int y);
     SudokuSquare getArray(int x, int y);
     bool setFitness(int val);
-    int getFitness();
+    int getFitness() const;
 
+    /*
+    friend bool operator<(const Sudoku &lhs, const Sudoku &rhs);
+    friend bool operator>(const Sudoku &lhs, const Sudoku &rhs);
+     */
+
+    bool lessThan(const Puzzle* rhs) const;
+    bool greaterThan(const Puzzle* rhs) const;
     private:
     SudokuSquare** sdk;
     int fitness_value;

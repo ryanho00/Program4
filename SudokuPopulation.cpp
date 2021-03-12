@@ -21,8 +21,8 @@ SudokuPopulation::SudokuPopulation(int pop_size, vector<Puzzle*> firstGen){
     nextGenerationMaker = new SudokuOffSpring();
     fitnessChecker = new SudokuFitness();
     population = firstGen;
-
     fitnessCheck();
+    sort(population.begin(),population.end(), betterFit);
 }
 
 int SudokuPopulation::getIndex(){
@@ -38,6 +38,15 @@ bool SudokuPopulation::cull(){
     // we know that we only want 10% of the population, so...
     int take_amount = population.size() * 0.1;
 
+/*
+    cout << "Here's this generation's sorted fitness score!" << endl;
+    for(int i = 0; i < population.size(); i++)
+    {
+       cout << population[i]->getFitness() << ", ";
+    }
+*/
+
+    /*
     // bubble sort from greatest fit to least fit (0-324) (Welcome to optimize this)
     for(int i = 0; i < population.size() - 1;i++){
         for(int j = 0; j < population.size() - i -1; j++){
@@ -46,6 +55,7 @@ bool SudokuPopulation::cull(){
             }
         }
     }
+     */
 
     // now having the sorted vector of sudokus, we just need to get take_amount of sudokus
     // pop the rest
@@ -56,6 +66,7 @@ bool SudokuPopulation::cull(){
 }
 
 int SudokuPopulation::bestFitness(){
+   /*
     int best_index = 0;
     int best_fitness = population[0]->getFitness();
     for(int i = 1; i < population.size(); i++){
@@ -65,18 +76,19 @@ int SudokuPopulation::bestFitness(){
         }
     }
     setIndex(best_index);
-    return best_fitness;
+    */
+    return population[0]->getFitness();
 }   
 
 bool SudokuPopulation::newGeneration(){
    //Create the next generation
    vector<Puzzle*> nextGen;
    while(nextGen.size() < population_size - population.size()){
-      int randomParentIndex = rand() % population_size;
+      int randomParentIndex = rand() % population.size();
       nextGen.push_back(nextGenerationMaker->makeOffSpring(population[randomParentIndex]));
+
    }
-   for(int i = 0; i < population.size(); i++)
-   {
+   for(int i = 0; i < population.size(); i++){
       nextGen.push_back(population[i]);
    }
 
@@ -91,12 +103,12 @@ bool SudokuPopulation::newGeneration(){
    population.clear();
    population = nextGen;
    fitnessCheck();
+   sort(population.begin(),population.end(), betterFit);
+   return true;
 }
 
 Puzzle* SudokuPopulation::bestIndividual(){
-    int index = getIndex();
-
-    return population[index];
+    return population[0];
 }
 
 void SudokuPopulation::fitnessCheck(){
@@ -105,4 +117,8 @@ void SudokuPopulation::fitnessCheck(){
       fitnessToAssign = fitnessChecker->howFit(population[i]);
       population[i]->setFitness(fitnessToAssign);
    }
+}
+
+bool SudokuPopulation::betterFit(const Puzzle *left, const Puzzle *right){
+   return left->getFitness() < right->getFitness();
 }

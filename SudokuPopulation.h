@@ -2,14 +2,15 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <algorithm>
 #include "Population.h"
 #include "SudokuOffSpring.h"
 #include "SudokuFitness.h"
 
 using namespace std;
 
-class SudokuPopulation: public Population{
 
+class SudokuPopulation: public Population{
 public:
     SudokuPopulation();
     ~SudokuPopulation();
@@ -19,6 +20,7 @@ public:
     int bestFitness();
     Puzzle* bestIndividual();
     void fitnessCheck();
+    static bool betterFit(const Puzzle* left, const Puzzle* right);
 
 private:
     vector<Puzzle*> population;

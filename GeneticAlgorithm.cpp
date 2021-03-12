@@ -23,10 +23,8 @@ void GeneticAlgorithm::process(){
     {
        cout << "Generation: " << i + 1 << endl;
        cout << "Best puzzle for this generation:" << endl;
-       populationManager->bestFitness();
        cout << *populationManager->bestIndividual();
-       cout << "Fitness score of " << populationManager->bestFitness() << endl;
-
+       populationManager->bestFitness();
        cout << "culling now!" << endl;
        populationManager->cull();
        cout << "culling complete!" << endl;
