@@ -1,3 +1,9 @@
+// SudokuPopulation.cpp
+// @author: Kray Nguyen and Ryan Ho
+// 3/12/2021
+// This class is in charge of storing sudoku population operations
+// and create new generations of sudokus
+
 #include "SudokuPopulation.h"
 using namespace std;
 
@@ -28,10 +34,18 @@ SudokuPopulation::SudokuPopulation(int pop_size, vector<Puzzle*> firstGen){
     sort(population.begin(),population.end(), betterFit);
 }
 
+// get the index best fitness puzzle in the vector
+// takes in nothing
+// assume index has values
+// returns int index
 int SudokuPopulation::getIndex(){
     return best_index;
 }
 
+// set the index of the population
+// takes in an int index to be set
+// assume index is valid
+// returns true if set, false otherwise
 bool SudokuPopulation::setIndex(int index){
     best_index = index;
     return true;

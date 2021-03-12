@@ -1,4 +1,7 @@
-
+// SudokuFactory.h
+// @author: Kray Nguyen and Ryan Ho
+// 3/12/2021
+// This class produce different puzzles based on the original input sudoku
 #include <iostream>
 #include <string>
 #include <vector>
@@ -11,8 +14,14 @@ using namespace std;
 class SudokuFactory: public PuzzleFactory{
 
 public:
+    //default constructor/deconstructor
     SudokuFactory();
     ~SudokuFactory();
+
+    // create random puzzles based on the original sudoku
+    // takes in a pointer to the original puzzle
+    // Assumes the original puzzle is valid
+    // returns new modified puzzle based on the original sudoku
     Puzzle* createPuzzle(Puzzle* base);
 
 private:

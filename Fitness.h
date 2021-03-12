@@ -1,3 +1,8 @@
+// Fitness.h
+// @author: Kray Nguyen and Ryan Ho
+// 3/12/2021
+// This interface calculates the sudoku's fitness number by counting duplications 
+
 #ifndef _FN_
 #define _FN_
 #include <iostream>
@@ -11,6 +16,10 @@ class Fitness {
 
 public:
 
+    // calculate fitness of a puzzle
+    // takes in a pointer to the puzzle needed fitness calculation
+    // Assumes the puzzle is initialized and filled with values
+    // returns int of fitness value
     virtual int howFit(Puzzle* pz) = 0;
 };
 

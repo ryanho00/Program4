@@ -1,3 +1,14 @@
+// main.cpp
+// @Author: Kray Nguyen and Ryan Ho
+// 3/12/2021
+// Input: maximum generations and population size
+// Output: solved sudoku or best unsolved sudoku with its finess score printed
+// Usage: ./a.out 2 3
+// then type in sequence of 81 numbers as original sudoku needed to be solved
+// Assumption: only 2 parameters are passed through the command line
+// Assumption: the event loop only works until the maximum generation has been reached or the sudoku is solved
+// Major algorithms: Genetic algorithm that mutates each sudokusquare based on the given mutation rate
+// also, this algorithm only keeps 10% of the best sudoku for each generation
 #include <iostream>
 #include <fstream>
 #include <ostream>
@@ -6,10 +17,15 @@
 using namespace std;
 
 int main(int argc, char *argv[]) {
+
+   // takes in input from commandline
    int population_size = atoi(argv[1]);
    int max_generation = atoi(argv[2]);
 
+   //create run object of genetic algorithm
    GeneticAlgorithm run(population_size, max_generation);
+
+   // solve sudoku
    run.process();
    // Population* testPopulation = new SudokuPopulation(population_size, max_generation);
    //Puzzle *test = new Sudoku();

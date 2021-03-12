@@ -1,3 +1,7 @@
+// SudokuFitness.cpp
+// @author: Kray Nguyen and Ryan Ho
+// 3/12/2021
+// This class calculates the sudoku's fitness number by counting duplications 
 #include "SudokuFitness.h"
 #include "Puzzle.h"
 #include <iostream>
@@ -6,14 +10,20 @@
 
 using namespace std;
 
+// default constructor
 SudokuFitness::SudokuFitness(){
 
 }
 
+// default deconstructor
 SudokuFitness::~SudokuFitness(){
 
 }
 
+    // count duplicates by block order
+    // takes in a pointer to the sudoku 
+    // Assumes the sudoku is initialized and filled with values
+    // returns int of duplication within a block
 int SudokuFitness::duplicateBlock(Sudoku* sdk){
     int duplicate = 0;
     for(int i = 0; i < 9; i+=3){
@@ -26,6 +36,11 @@ int SudokuFitness::duplicateBlock(Sudoku* sdk){
     return duplicate;
 }
 
+
+    // helper method to count each 3x3 blocks
+    // takes in sudoku pointer, start coordinates and end coordinates
+    // Assumes the sudoku is initialized and filled with values and coordinates are valid
+    // returns int of duplicates within each 3x3 blocks
 int SudokuFitness::countEachBlock(Sudoku* sdk, int start_x, int start_y, int end_x, int end_y){
     vector<int> temp;
     int duplicate = 0;
@@ -69,6 +84,10 @@ int SudokuFitness::countEachBlock(Sudoku* sdk, int start_x, int start_y, int end
     return duplicate;
 }
 
+    // count duplicates by row order
+    // takes in a pointer to the sudoku 
+    // Assumes the sudoku is initialized and filled with values
+    // returns int of duplication within a row
 int SudokuFitness::duplicateRow(Sudoku* sdk){
     int duplicate = 0;
 
@@ -89,6 +108,10 @@ int SudokuFitness::duplicateRow(Sudoku* sdk){
     return duplicate;
 }
 
+    // count duplicates by column order
+    // takes in a pointer to the sudoku 
+    // Assumes the sudoku is initialized and filled with values
+    // returns int of duplication within a column
 int SudokuFitness::duplicateColumn(Sudoku* sdk){
     int duplicate = 0;
 
@@ -109,6 +132,10 @@ int SudokuFitness::duplicateColumn(Sudoku* sdk){
     return duplicate;
 }
 
+    // calculate fitness of a puzzle
+    // takes in a pointer to the puzzle needed fitness calculation
+    // Assumes the puzzle is initialized and filled with values
+    // returns int of fitness value
 int SudokuFitness::howFit(Puzzle* sdk){
    Sudoku *targetSDK = dynamic_cast<Sudoku*>(sdk);
     //cout << "Column: " << duplicateColumn(targetSDK) << endl;

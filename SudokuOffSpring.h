@@ -1,6 +1,8 @@
-//
-// Created by Ryan Ho on 3/9/2021.
-//
+// SudokuOffSpring.h
+// @author: Kray Nguyen and Ryan Ho
+// 3/12/2021
+// This class is in charge of mutating each sudoku square and make offspring based
+// on the original sudoku 
 
 #ifndef SUDOKUPUZZLE_SUDOKUOFFSPRING_H
 #define SUDOKUPUZZLE_SUDOKUOFFSPRING_H
@@ -16,14 +18,27 @@ using namespace std;
 
 class SudokuOffSpring: public Reproduction {
 public:
+
+    // default constructor
     SudokuOffSpring();
 
+    // make sudoku offspring based on the original sudoku
+    // takes in a pointer to puzzle needed to get offsprings
+    // Assumes puzzle is initialized and filled with values
+    // returns a new puzzle that is modified a bit from the base one
     Puzzle* makeOffSpring(Puzzle *sdk);
 
+    // whether to mutate the sudokusquare based on the mutation rate
+    // takes in a sudokusquare that is considered to be mutated
+    // Assumes sudokusquare has fixed and number values
+    // returns a new sudokuSquare, either new or orignial
     SudokuSquare mutate(SudokuSquare square);
 
 private:
+    // to store mutation rate
     double mutation_rate;
+
+    // for randomly pick a new value for sudoku square
     default_random_engine generator;
 };
 

@@ -1,3 +1,9 @@
+// GeneticAlgorithm.cpp
+// @author: Kray Nguyen and Ryan Ho
+// 3/12/2021
+// This class is in charge of solving the sudokus by using operations from other classes
+// such as population, puzzle, and puzzle factory
+
 #include "GeneticAlgorithm.h"
 
 //Construct the algorithm with max pop_size and max_gen

@@ -1,10 +1,22 @@
+// SudokuOffSpring.cpp
+// @author: Kray Nguyen and Ryan Ho
+// 3/12/2021
+// This class is in charge of mutating each sudoku square and make offspring based
+// on the original sudoku 
+
 #include "SudokuOffSpring.h"
 #include <random>
 
+// default constructor
+// sets mutation rate to default value
 SudokuOffSpring::SudokuOffSpring(){
     mutation_rate = 0.02;
 }
 
+    // make sudoku offspring based on the original sudoku
+    // takes in a pointer to puzzle needed to get offsprings
+    // Assumes puzzle is initialized and filled with values
+    // returns a new puzzle that is modified a bit from the base one
 Puzzle* SudokuOffSpring::makeOffSpring(Puzzle *sdk){
    Sudoku *targetSDK = dynamic_cast<Sudoku*>(sdk);
     
@@ -25,6 +37,10 @@ Puzzle* SudokuOffSpring::makeOffSpring(Puzzle *sdk){
     return new_sdk;
 }
 
+    // whether to mutate the sudokusquare based on the mutation rate
+    // takes in a sudokusquare that is considered to be mutated
+    // Assumes sudokusquare has fixed and number values
+    // returns a new sudokuSquare, either new or orignial
 SudokuSquare SudokuOffSpring::mutate(SudokuSquare square)
 {
     // if not fixed value

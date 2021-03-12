@@ -1,3 +1,8 @@
+// Sudoku.cpp
+// @author: Kray Nguyen and Ryan Ho
+// 3/12/2021
+// This class represents a sudoku puzzle by storing 81 sudokusquare object in a 2D aray
+
 #include <iostream>
 #include "Sudoku.h"
 #include <string>
