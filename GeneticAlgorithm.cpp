@@ -1,5 +1,5 @@
 // GeneticAlgorithm.cpp
-// @author: Kray Nguyen and Ryan Ho
+// @author: Kray Nguyen and Ryan Ho (1872129)
 // 3/12/2021
 // This class is in charge of solving the sudokus by using operations from other classes
 // such as population, puzzle, and puzzle factory
@@ -34,7 +34,7 @@ void GeneticAlgorithm::process(){
     //Cull and make new generation for no more than max_generation allowed
     for(int i = 0; i < max_generation; i++)
     {
-       cout << "Generation: " << i + 1 << endl;
+       cout << "\nGeneration: " << i + 1 << endl;
        cout << "Best puzzle for this generation:" << endl;
        cout << *populationManager->bestIndividual();
        populationManager->bestFitness();
@@ -50,6 +50,7 @@ void GeneticAlgorithm::process(){
        }
     }
 
+    //Delete the pointers to avoid leaks
     firstGen.clear();
     delete factory;
     delete toSolve;

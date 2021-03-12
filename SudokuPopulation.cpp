@@ -1,5 +1,5 @@
 // SudokuPopulation.cpp
-// @author: Kray Nguyen and Ryan Ho
+// @author: Kray Nguyen and Ryan Ho (1872129)
 // 3/12/2021
 // This class is in charge of storing sudoku population operations
 // and create new generations of sudokus
@@ -80,12 +80,15 @@ int SudokuPopulation::bestFitness(){
 //returns true if we made it to the end of the function
 bool SudokuPopulation::newGeneration(){
    //Create the next generation
-   int amountOfParent = population.size();
+   int amountOfParent = population.size();   //Remembers how many parents there are
    while(population.size() < population_size){
+      //Grabs a random parent and create an offspring from that
       int randomParentIndex = rand() % amountOfParent;
       population.push_back(nextGenerationMaker->makeOffSpring(population[randomParentIndex]));
    }
+   //Check all of their fitness again
    fitnessCheck();
+   //Sort it from best fitness to worst fitness
    sort(population.begin(),population.end(), betterFit);
    return true;
 }

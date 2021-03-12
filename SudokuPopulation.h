@@ -1,5 +1,5 @@
 // SudokuPopulation.h
-// @author: Kray Nguyen and Ryan Ho
+// @author: Kray Nguyen and Ryan Ho (1872129)
 // 3/12/2021
 // This class is in charge of storing sudoku population operations
 // and create new generations of sudokus

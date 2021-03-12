@@ -1,5 +1,5 @@
 // SudokuFactory.cpp
-// @author: Kray Nguyen and Ryan Ho
+// @author: Kray Nguyen and Ryan Ho (1872129)
 // 3/12/2021
 // This class produce different puzzles based on the original input sudoku
 #include "SudokuFactory.h"
@@ -42,4 +42,5 @@ Puzzle* SudokuFactory::createPuzzle(Puzzle* base){
 
     Puzzle* tempReturn = newSudoku;
     return tempReturn;
+    //Don't forget to delete the pointer after dealing with it outside of the function!
 }

@@ -1,5 +1,5 @@
 // Fitness.h
-// @author: Kray Nguyen and Ryan Ho
+// @author: Kray Nguyen and Ryan Ho (1872129)
 // 3/12/2021
 // This interface calculates the sudoku's fitness number by counting duplications 
 

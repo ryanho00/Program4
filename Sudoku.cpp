@@ -1,7 +1,7 @@
 // Sudoku.cpp
-// @author: Kray Nguyen and Ryan Ho
+// @author: Kray Nguyen and Ryan Ho (1872129)
 // 3/12/2021
-// This class represents a sudoku puzzle by storing 81 sudokusquare object in a 2D aray
+// This class represents a sudoku puzzle by storing 81 sudokusquare object in a 2D array
 
 #include <iostream>
 #include "Sudoku.h"
@@ -38,6 +38,7 @@ Sudoku::Sudoku(Sudoku &copy){
 
 //Default destructor
 Sudoku::~Sudoku(){
+   //Deletes all the pointers in the array to avoid leaks
    for(int i = 0; i < 9; i++)
    {
       delete[] sdk[i];
@@ -110,6 +111,7 @@ ostream& Sudoku::print(ostream& the_stream) {
 istream& Sudoku::readPuzzle(istream &the_stream) {
    char toProcess;
    int pos = 0;
+   //Nested loops to go through the squares one by one, in row major order
    for(int i = 0; i < 9; i++)
    {
       for(int j = 0; j < 9; j++)

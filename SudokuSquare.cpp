@@ -1,5 +1,5 @@
 // SudokuSquare.h
-// @author: Kray Nguyen and Ryan Ho
+// @author: Kray Nguyen and Ryan Ho (1872129)
 // 3/12/2021
 // This class is storing each sudoku square value such as number and whether 
 // the value is fixed

@@ -1,5 +1,5 @@
 // SudokuOffSpring.cpp
-// @author: Kray Nguyen and Ryan Ho
+// @author: Kray Nguyen and Ryan Ho (1872129)
 // 3/12/2021
 // This class is in charge of mutating each sudoku square and make offspring based
 // on the original sudoku 

@@ -1,7 +1,7 @@
 // Sudoku.h
-// @author: Kray Nguyen and Ryan Ho
+// @author: Kray Nguyen and Ryan Ho (1872129)
 // 3/12/2021
-// This class represents a sudoku puzzle by storing 81 sudokusquare object in a 2D aray
+// This class represents a sudoku puzzle by storing 81 sudokusquare object in a 2D array
 
 #include "SudokuSquare.h"
 #include "Puzzle.h"

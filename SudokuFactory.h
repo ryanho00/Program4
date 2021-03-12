@@ -1,5 +1,5 @@
 // SudokuFactory.h
-// @author: Kray Nguyen and Ryan Ho
+// @author: Kray Nguyen and Ryan Ho (1872129)
 // 3/12/2021
 // This class produce different puzzles based on the original input sudoku
 #include <iostream>

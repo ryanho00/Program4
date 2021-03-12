@@ -1,5 +1,5 @@
 // SudokuFitness.cpp
-// @author: Kray Nguyen and Ryan Ho
+// @author: Kray Nguyen and Ryan Ho (1872129)
 // 3/12/2021
 // This class calculates the sudoku's fitness number by counting duplications 
 #include "SudokuFitness.h"
@@ -12,12 +12,12 @@ using namespace std;
 
 // default constructor
 SudokuFitness::SudokuFitness(){
-
+   //Nothing to instantiate
 }
 
 // default deconstructor
 SudokuFitness::~SudokuFitness(){
-
+   //Nothing to delete
 }
 
     // count duplicates by block order
@@ -138,9 +138,12 @@ int SudokuFitness::duplicateColumn(Sudoku* sdk){
     // returns int of fitness value
 int SudokuFitness::howFit(Puzzle* sdk){
    Sudoku *targetSDK = dynamic_cast<Sudoku*>(sdk);
+
+   //Code below to print the results of all the other tasks for debugging purpose
     //cout << "Column: " << duplicateColumn(targetSDK) << endl;
     //cout << "Row: " << duplicateRow(targetSDK) << endl;
     //cout << "Blocks: " << duplicateBlock(targetSDK) << endl;
+
     int fitness = duplicateBlock(targetSDK) + duplicateColumn(targetSDK) + duplicateRow(targetSDK);
     return fitness;
 }

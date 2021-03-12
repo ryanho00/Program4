@@ -1,5 +1,5 @@
 // main.cpp
-// @Author: Kray Nguyen and Ryan Ho
+// @Author: Kray Nguyen and Ryan Ho (1872129)
 // 3/12/2021
 // Input: maximum generations and population size
 // Output: solved sudoku or best unsolved sudoku with its finess score printed
@@ -34,14 +34,14 @@ int main(int argc, char *argv[]) {
    // SudokuOffSpring *testReproduction = new SudokuOffSpring();
    // // Cin works with this test string
    // //123456789123456789123456789123456789123456789123456789123456789123456789123456789
-    //cout << "Please give me a line for the Sudoku!" << endl;
-    //cin >> *test;
+   //cout << "Please give me a line for the Sudoku!" << endl;
+   //cin >> *test;
    // cout << *test << endl;
    // //cout << *testFactory->createPuzzle();
    // //cout << *testFactory->createPuzzle();
    // //cout << *testFactory->createPuzzle();
-    //testFitness->howFit(test);
-    //cout << testFitness->howFit(test) << endl;
+   //testFitness->howFit(test);
+   //cout << testFitness->howFit(test) << endl;
 
    // // TODO #RYAN: HELP ME DEBUG LINE32
    // // I can't cout << sudoku object (makeOffSpring returns sudoku)
@@ -75,6 +75,5 @@ int main(int argc, char *argv[]) {
    cout << "SDK1 > SDK2 : " << (sdk1 > sdk2) << endl;
    cout << "SDK1 < SDK2 : " << (sdk1 < sdk2) << endl;
 */
-
    return 0;
 }
