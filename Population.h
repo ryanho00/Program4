@@ -1,5 +1,5 @@
 // Population.h
-// @author: Kray Nguyen and Ryan Ho (1872129)
+// @author: Kray Nguyen(1869265) and Ryan Ho (1872129)
 // 3/12/2021
 // This interface is in charge of storing sudoku population operations
 // and create new generations of sudokus
