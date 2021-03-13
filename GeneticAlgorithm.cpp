@@ -1,5 +1,5 @@
 // GeneticAlgorithm.cpp
-// @author: Kray Nguyen and Ryan Ho (1872129)
+// @author: Kray Nguyen(1869265) and Ryan Ho (1872129)
 // 3/12/2021
 // This class is in charge of solving the sudokus by using operations from other classes
 // such as population, puzzle, and puzzle factory

@@ -1,5 +1,5 @@
 // main.cpp
-// @Author: Kray Nguyen and Ryan Ho (1872129)
+// @Author: Kray Nguyen(1869265) and Ryan Ho (1872129)
 // 3/12/2021
 // Input: maximum generations and population size
 // Output: solved sudoku or best unsolved sudoku with its finess score printed
